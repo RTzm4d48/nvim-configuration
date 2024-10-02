@@ -28,9 +28,25 @@ require('packer').startup(function(use)
 
     -- coc.nvim para autocompletado
     use {'neoclide/coc.nvim', branch = 'release'}
+    
+    -- Auto completar y cierre de signos como '[],{},(),""'
+    use 'windwp/nvim-autopairs'
+    
+    -- Agrega + o - cuando agregamos o quitamos una linea
+    use 'airblade/vim-gitgutter'
+    
+    -- Para ver las lineas de indentación
+    use 'Yggdroot/indentLine'
+
+    -- Para crear multiples cursores de inserción
+    use 'mg979/vim-visual-multi'
  
 end)
 
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/theme.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/lualine.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/fzf.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/autopairs.lua"))
+
+
+

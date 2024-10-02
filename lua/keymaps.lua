@@ -53,3 +53,17 @@ vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { 
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', { noremap = true, expr = true, silent = true })
 -- Usa Enter para seleccionar la sugerencia en coc.nvim
 vim.api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? coc#_select_confirm() : "\\<CR>"', { noremap = true, expr = true, silent = true })
+
+
+
+-- Mapeos básicos para fzf
+-- Buscar archivos
+vim.api.nvim_set_keymap('n', '<leader>f', ':Files<CR>', { noremap = true, silent = true })
+-- Buscar buffers
+vim.api.nvim_set_keymap('n', '<leader>b', ':Buffers<CR>', { noremap = true, silent = true })
+-- Buscar en el proyecto (requiere el plugin Ag)
+vim.api.nvim_set_keymap('n', '<leader>g', ':Ag<CR>', { noremap = true, silent = true })
+-- Buscar en el historial de comandos
+vim.api.nvim_set_keymap('n', '<leader>h', ':History<CR>', { noremap = true, silent = true })
+
+
