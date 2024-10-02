@@ -1,0 +1,14 @@
+{
+    "suggest.autoTrigger": "always",
+    "suggest.minTriggerInputLength": 1,
+    "languageserver": {
+        "tsserver": {
+            "command": "typescript-language-server",
+            "args": ["--stdio"],
+            "filetypes": ["typescript", "javascript", "javascriptreact", "typescriptreact"],
+            "initializationOptions": {
+                "hostInfo": "vim"
+            }
+        }
+    }
+}

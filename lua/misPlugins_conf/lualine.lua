@@ -1,7 +1,7 @@
 -- LUALINE
 require('lualine').setup {
   options = {
-    theme = 'onedark',        -- El tema que quieras
+    theme = 'onedark',        -- El theme
     icons_enabled = true,     -- Habilitar iconos
     section_separators = '',  -- Separadores opcionales
     component_separators = ''
