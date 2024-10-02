@@ -40,6 +40,12 @@ require('packer').startup(function(use)
 
     -- Para crear multiples cursores de inserción
     use 'mg979/vim-visual-multi'
+    
+    -- Para el resaltado de sintaxis (colores en el código)
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
  
 end)
 
@@ -47,6 +53,7 @@ dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/theme.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/lualine.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/fzf.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/autopairs.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/treesitter.lua"))
 
 
 
