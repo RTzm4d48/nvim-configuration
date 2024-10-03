@@ -46,6 +46,11 @@ require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+
+    -- Plugin del minimapa
+    use 'wfxr/minimap.vim'
+
+
  
 end)
 
@@ -54,6 +59,5 @@ dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/lualine.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/fzf.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/autopairs.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/treesitter.lua"))
-
-
+dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/minimap.lua"))
 

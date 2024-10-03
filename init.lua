@@ -16,3 +16,5 @@ vim.opt.mouse = "a"           -- Habilita el uso del ratón
 
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.g.NERDTreeShowHidden = 1  -- Mostrar archivos ocultos en NERDTree (por ejemplo nos muestra '.env' o '.gitignore')

@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = 
 vim.api.nvim_set_keymap('i', '<C-d>', '<Esc><CR>', { noremap = true, silent = true })
 
 -- Entrar al modo insert con Ctrl + w
-vim.api.nvim_set_keymap('n', '<C-w>', 'i', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<C-w>', 'i', { noremap = true, silent = true })
 
 -- Salir rápidamente con Control + q
 vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap = true, silent = true })
