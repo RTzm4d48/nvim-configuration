@@ -14,9 +14,8 @@ vim.api.nvim_set_keymap('i', '<C-d>', '<Esc><CR>', { noremap = true, silent = tr
 vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap = true, silent = true })
 
 
-
 -- Para abrir y cerrar el explorador de archivos NERDTree
-vim.api.nvim_set_keymap('n', '<C-b>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 
 

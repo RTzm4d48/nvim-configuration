@@ -15,8 +15,10 @@ require('packer').startup(function(use)
     }
 
     -- NERDTree plugin
-    use 'preservim/nerdtree'
+    --use 'preservim/nerdtree'
     -- Iconos para NERDTree
+    --
+    use 'kyazdani42/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
 
     -- FZF y fzf.vim
@@ -60,4 +62,4 @@ dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/fzf.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/autopairs.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/treesitter.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/minimap.lua"))
-
+dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/nvim-tree.lua"))
