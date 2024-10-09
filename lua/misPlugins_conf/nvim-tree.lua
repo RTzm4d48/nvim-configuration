@@ -11,7 +11,7 @@ require('nvim-tree').setup {
     },
   },
   filters = {
-    dotfiles = true, -- Mostrar archivos ocultos
+    dotfiles = false, -- Desactiva el filtro que oculta los archivos que empiezan con un punto (.)
     custom = { '.git$', 'node_modules$', '.cache' }, -- Ocultar otros directorios
   },
   git = {

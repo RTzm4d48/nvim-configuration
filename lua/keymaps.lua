@@ -4,6 +4,10 @@
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 -- Salir al modo normal y guardar el archivo con Control + s
 vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
+-- Salimos al modo normal pegamos texto y volvemos
+vim.api.nvim_set_keymap('i', '<C-p>', '<Esc>pa', { noremap = true, silent = true })
+-- entrar en mdo seleccionar en modo insert
+vim.api.nvim_set_keymap('i', '<C-v>', '<Esc>v', { noremap = true, silent = true })
 -- Slir del modo Insert
 vim.api.nvim_set_keymap('i', '<C-d>', '<Esc><CR>', { noremap = true, silent = true })
 
@@ -12,12 +16,11 @@ vim.api.nvim_set_keymap('i', '<C-d>', '<Esc><CR>', { noremap = true, silent = tr
 
 -- Salir rápidamente con Control + q
 vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-q>', '<Esc>', { noremap = true, silent = true })
 
 
 -- Para abrir y cerrar el explorador de archivos NERDTree
 vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
-
 
 
 -- Mover línea hacia arriba y abajo con Alt + direccionales en modo Normal
@@ -66,3 +69,8 @@ vim.api.nvim_set_keymap('n', '<leader>g', ':Ag<CR>', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', '<leader>h', ':History<CR>', { noremap = true, silent = true })
 
 
+
+-- Mapeos para el Ctrl + Z
+vim.api.nvim_set_keymap('v', '<C-z>', '"+u', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-z>', '"+u', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-z>', '<Esc>"+u', { noremap = true, silent = true })
