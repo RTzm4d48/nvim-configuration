@@ -1,23 +1,13 @@
 -- ui.lua
+return function(use)
 
--- Logo en texto ASCII
-local logo = [[
- /$$$$$$$  /$$$$$$$$                         /$$   /$$       /$$ /$$   /$$  /$$$$$$ 
-| $$__  $$|__  $$__/                        | $$  | $$      | $$| $$  | $$ /$$__  $$
-| $$  \ $$   | $$    /$$$$$$$$ /$$$$$$/$$$$ | $$  | $$  /$$$$$$$| $$  | $$| $$  \ $$
-| $$$$$$$/   | $$   |____ /$$/| $$_  $$_  $$| $$$$$$$$ /$$__  $$| $$$$$$$$|  $$$$$$/
-| $$__  $$   | $$      /$$$$/ | $$ \ $$ \ $$|_____  $$| $$  | $$|_____  $$ >$$__  $$
-| $$  \ $$   | $$     /$$__/  | $$ | $$ | $$      | $$| $$  | $$      | $$| $$  \ $$
-| $$  | $$   | $$    /$$$$$$$$| $$ | $$ | $$      | $$|  $$$$$$$      | $$|  $$$$$$/
-|__/  |__/   |__/   |________/|__/ |__/ |__/      |__/ \_______/      |__/ \______/ 
-]]
+    -- Instalar alpha-nvim este plugin nos permite personalizar la pantalla de inicio de Nvim
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' }, -- Si quiremos iconos
+    }
+ 
+    -- Plugin con su configuracion. Diseño flotante para el cuadro de comandos.
+    dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/noice.lua"))(use)
 
--- Función para mostrar el logo
-local function show_logo()
-    vim.api.nvim_echo({{logo, "Normal"}}, false, {})
 end
-
--- Ejecutar la función al iniciar Neovim
-vim.api.nvim_create_autocmd("VimEnter", {
-    callback = show_logo
-})

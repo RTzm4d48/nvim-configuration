@@ -48,72 +48,21 @@ require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    
+    dofile(vim.fn.expand("~/.config/nvim/lua/plugins/ui.lua"))(use)  -- Configuraciones de insterfaz de ususario
 
     -- Plugin del minimapa
-    use 'wfxr/minimap.vim'
-
-    -- Instalar alpha-nvim este plugin nos permite personalizar la pantalla de inicio de Nvim
-    use {
-        'goolord/alpha-nvim',
-        requires = { 'nvim-tree/nvim-web-devicons' }, -- Si quieres iconos
-    }
+    --use 'wfxr/minimap.vim'
 end)
 
-dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/theme.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/lualine.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/fzf.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/autopairs.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/treesitter.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/minimap.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/misPlugins_conf/nvim-tree.lua"))
+-- PLugins Configurations
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/theme.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/lualine.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/fzf.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/autopairs.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/treesitter.lua"))
+--dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/minimap.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/nvim-tree.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/alpha-nvim.lua"))
 
 
---vim.api.nvim_exec([[
-  --command! -nargs=* Rg
-    --\ call fzf#vim#grep(
-    --\   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-    --\   fzf#vim#with_preview(), <bang>0)
---]], false)
-
-
---require('spectre').setup({
-    --mapping = {
-        ---- Mapeo para reemplazar todas las ocurrencias en la selección
-        --['ctrl-r'] = 'replace',
-        ---- Mapeo para abrir el archivo en la posición encontrada
-        --['ctrl-o'] = 'open_file',
-        ---- Mapeo para cambiar el directorio de búsqueda
-        --['ctrl-d'] = 'change_dir',
-    --},
-    ---- Otras configuraciones si lo deseas
---}
---
---
-local alpha = require("alpha")
-local dashboard = require("alpha.themes.dashboard")
-
--- Logo en texto ASCII
-dashboard.section.header.val = {
-    [[ /$$$$$$$  /$$$$$$$$                         /$$   /$$       /$$ /$$   /$$  /$$$$$$ ]],
-    [[| $$__  $$|__  $$__/                        | $$  | $$      | $$| $$  | $$ /$$__  $$]],
-    [[| $$  \ $$   | $$    /$$$$$$$$ /$$$$$$/$$$$ | $$  | $$  /$$$$$$$| $$  | $$| $$  \ $$]],
-    [[| $$$$$$$/   | $$   |____ /$$/| $$_  $$_  $$| $$$$$$$$ /$$__  $$| $$$$$$$$|  $$$$$$/ ]],
-    [[| $$__  $$   | $$      /$$$$/ | $$ \ $$ \ $$|_____  $$| $$  | $$|_____  $$ >$$__  $$]],
-    [[| $$  \ $$   | $$     /$$__/  | $$ | $$ | $$      | $$| $$  | $$      | $$| $$  \ $$]],
-    [[| $$  | $$   | $$    /$$$$$$$$| $$ | $$ | $$      | $$|  $$$$$$$      | $$|  $$$$$$/]],
-    [[|__/  |__/   |__/   |________/|__/ |__/ |__/      |__/ \_______/      |__/ \______/ ]],
-}
-
--- Opciones del menú
-dashboard.section.buttons.val = {
-    dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
-    dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
-    dashboard.button("q", "  Quit", ":qa<CR>"),
-}
-
--- Footer personalizado
-dashboard.section.footer.val = "Welcome to Neovim"
-
--- Configurar el diseño del dashboard
-alpha.setup(dashboard.config)

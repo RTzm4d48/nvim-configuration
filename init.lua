@@ -3,8 +3,7 @@ vim.g.mapleader = " "         -- Tecla líder (líder = espacio)
 
 -- Opciones generales
 require('keymaps')  -- Si está en ~/.config/nvim/lua/keymaps.lua
-require('plugins/plugins_main')
-require('ui') -- COnfiguraciones de interfaz de usuario (UI)
+require('/plugins/plugins_main')
 
 vim.opt.number = true         -- Mostrar números de línea
 vim.opt.relativenumber = true -- Números relativos para moverme fácilmente
@@ -22,14 +21,14 @@ vim.g.NERDTreeShowHidden = 1  -- Mostrar archivos ocultos en NERDTree (por ejemp
 
 
 -- Cambiamos el color del cursor de insercion y cambiamos a linea el cursor del modo normal.
-vim.cmd([[
-  highlight Cursor guifg=black guibg=white
-  highlight CursorInsert guifg=white guibg=#1bcbff
-]])
-vim.opt.guicursor = {
-    "n-v-c:ver30-Cursor",      -- Línea vertical en modo normal, visual y comando
-    "i:ver30-CursorInsert",    -- Línea vertical en modo de inserción (30% de ancho)
-}
+--vim.cmd([[
+  --highlight Cursor guifg=black guibg=white
+  --highlight CursorInsert guifg=white guibg=#1bcbff
+--]])
+--vim.opt.guicursor = {
+    --"n-v-c:ver30-Cursor",      -- Línea vertical en modo normal, visual y comando
+    --"i:ver30-CursorInsert",    -- Línea vertical en modo de inserción (30% de ancho)
+--}
 
 -- Resaltar la línea actual
 vim.opt.cursorline = true
