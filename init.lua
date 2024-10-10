@@ -3,7 +3,8 @@ vim.g.mapleader = " "         -- Tecla líder (líder = espacio)
 
 -- Opciones generales
 require('keymaps')  -- Si está en ~/.config/nvim/lua/keymaps.lua
-require('plugins')
+require('plugins/plugins_main')
+require('ui') -- COnfiguraciones de interfaz de usuario (UI)
 
 vim.opt.number = true         -- Mostrar números de línea
 vim.opt.relativenumber = true -- Números relativos para moverme fácilmente
