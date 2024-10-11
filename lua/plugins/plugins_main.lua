@@ -41,7 +41,7 @@ require('packer').startup(function(use)
     use 'Yggdroot/indentLine'
 
     -- Para crear multiples cursores de inserción
-    use 'mg979/vim-visual-multi'
+    --use 'mg979/vim-visual-multi'
     
     -- Para el resaltado de sintaxis (colores en el código)
     use {
@@ -50,10 +50,32 @@ require('packer').startup(function(use)
     }
     
     dofile(vim.fn.expand("~/.config/nvim/lua/plugins/ui.lua"))(use)  -- Configuraciones de insterfaz de ususario
-
+    
+    use 'psliwka/vim-smoothie'
     -- Plugin del minimapa
     --use 'wfxr/minimap.vim'
-end)
+    use 'terryma/vim-multiple-cursors'
+    --
+    --use {
+      --'smoka7/multicursors.nvim',
+      --event = "VeryLazy",
+      --config = function()
+        --require("multicursors").setup()
+      --end,
+      --dependencies = {
+        --'nvim-treesitter/nvim-treesitter',
+        --'nvim-treesitter/nvim-treesitter-textobjects',
+      --}
+    --}
+    --
+    --
+    use {
+      'smjonas/inc-rename.nvim',
+      config = function()
+        require("inc_rename").setup()
+      end
+    }
+    end)
 
 -- PLugins Configurations
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/theme.lua"))
@@ -64,5 +86,6 @@ dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/treesitter.lua"
 --dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/minimap.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/nvim-tree.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/alpha-nvim.lua"))
+
 
 

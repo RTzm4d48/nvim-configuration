@@ -46,8 +46,8 @@ vim.api.nvim_set_keymap('n', '<Leader><', '10<C-w><', { noremap = true, silent =
 
 
 -- Desplazamiento más rápido
-vim.api.nvim_set_keymap('n', '<A-j>', '10<C-e>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-k>', '10<C-y>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '20<C-e>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '20<C-y>', { noremap = true, silent = true })
 
 
 -- Usa Tab y Shift+Tab para navegar y seleccionar autocompletados de 'coc.nvim'
@@ -74,3 +74,14 @@ vim.api.nvim_set_keymap('n', '<leader>h', ':History<CR>', { noremap = true, sile
 vim.api.nvim_set_keymap('v', '<C-z>', '"+u', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-z>', '"+u', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-z>', '<Esc>"+u', { noremap = true, silent = true })
+
+
+
+vim.keymap.set("n", "<leader>rn", function() return ":IncRename " .. vim.fn.expand("<cword>") end, { expr = true })
+
+
+-- Para volver a recargar la configuracion de Nvim desde cualquier parte
+vim.api.nvim_set_keymap('n', '<leader>r', ':source ~/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
+
+-- Cuando buscamos con '/', '*', '#' se genera un resaltado en las palabras, con esto salimos del resaltado
+vim.api.nvim_set_keymap('n', '<leader>n', ':nohlsearch<CR>', { noremap = true, silent = true })

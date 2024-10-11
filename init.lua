@@ -33,3 +33,8 @@ vim.g.NERDTreeShowHidden = 1  -- Mostrar archivos ocultos en NERDTree (por ejemp
 -- Resaltar la línea actual
 vim.opt.cursorline = true
 --vim.cmd([[highlight CursorLine guibg=#1bcbff]])  --Para personalizar el color de la linea
+----
+--require('packer').startup(function()
+  --use 'psliwka/vim-smoothie'
+--end)
+--
