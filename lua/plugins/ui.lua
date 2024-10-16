@@ -8,7 +8,7 @@ return function(use)
     }
  
     -- Plugin con su configuracion. Diseño flotante para el cuadro de comandos.
-    dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/noice.lua"))(use)
+    --dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/noice.lua"))(use)
     
 
     use {

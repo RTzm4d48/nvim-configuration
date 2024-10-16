@@ -85,3 +85,9 @@ vim.api.nvim_set_keymap('n', '<leader>r', ':source ~/.config/nvim/init.lua<CR>',
 
 -- Cuando buscamos con '/', '*', '#' se genera un resaltado en las palabras, con esto salimos del resaltado
 vim.api.nvim_set_keymap('n', '<leader>n', ':nohlsearch<CR>', { noremap = true, silent = true })
+
+-- Para cambiar una ventana de posición
+vim.api.nvim_set_keymap("n", "<leader>w", ":WinShift<CR>", { noremap = true, silent = true })
+
+-- Para maximizar una ventana y tambien para restaurar a su tamaño original
+vim.api.nvim_set_keymap("n", "<leader>m", ":MaximizerToggle<CR>", { noremap = true, silent = true })

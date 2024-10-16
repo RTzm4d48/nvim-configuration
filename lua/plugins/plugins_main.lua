@@ -68,13 +68,19 @@ require('packer').startup(function(use)
       --}
     --}
     --
-    --
+    --Aún falta configurar, es para renombrar todas las palabras iguales.
     use {
       'smjonas/inc-rename.nvim',
       config = function()
         require("inc_rename").setup()
       end
     }
+
+    -- Este plugin es muy bueno para mover ventanas.
+    use 'sindrets/winshift.nvim'
+
+    -- Para maximizar y restaurar una ventana a su tamaño original
+    use 'szw/vim-maximizer'
     end)
 
 -- PLugins Configurations
