@@ -14,10 +14,6 @@ require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }  -- Iconos opcionales
     }
 
-    -- NERDTree plugin
-    --use 'preservim/nerdtree'
-    -- Iconos para NERDTree
-    --
     use 'kyazdani42/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
 
@@ -49,11 +45,11 @@ require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     
-    dofile(vim.fn.expand("~/.config/nvim/lua/plugins/ui.lua"))(use)  -- Configuraciones de insterfaz de ususario
+    dofile(vim.fn.expand("~/.config/nvim/lua/ui.lua"))(use)  -- Configuraciones de insterfaz de ususario
     
     use 'psliwka/vim-smoothie'
-    -- Plugin del minimapa
-    --use 'wfxr/minimap.vim'
+
+    --  
     use 'terryma/vim-multiple-cursors'
     --
     --use {
@@ -81,17 +77,24 @@ require('packer').startup(function(use)
 
     -- Para maximizar y restaurar una ventana a su tamaño original
     use 'szw/vim-maximizer'
-    end)
+
+    -- To painter comentary
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("plugins_config.todo-comments")
+        end
+    }
+end)
 
 -- PLugins Configurations
-dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/theme.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/lualine.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/fzf.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/autopairs.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/treesitter.lua"))
---dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/minimap.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/nvim-tree.lua"))
-dofile(vim.fn.expand("~/.config/nvim/lua/plugins/misPlugins_conf/alpha-nvim.lua"))
-
-
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/theme.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/lualine.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/fzf.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/autopairs.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/treesitter.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/minimap.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/nvim-tree.lua"))
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/alpha-nvim.lua"))
 
