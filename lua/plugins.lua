@@ -86,6 +86,9 @@ require('packer').startup(function(use)
             require("plugins_config.todo-comments")
         end
     }
+    -- Para los colores como '#e67e22' o red, etc
+    use 'norcalli/nvim-colorizer.lua'
+    use 'ap/vim-css-color'
 end)
 
 -- PLugins Configurations
@@ -97,4 +100,4 @@ dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/treesitter.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/minimap.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/nvim-tree.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/alpha-nvim.lua"))
-
+dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/nvim-colorizer.lua"))
