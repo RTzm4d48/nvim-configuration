@@ -21,9 +21,6 @@ require('packer').startup(function(use)
     use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
     use 'junegunn/fzf.vim'
 
-    -- NERD Commenter para comentar código
-    use 'preservim/nerdcommenter'
-
     -- coc.nvim para autocompletado
     use {'neoclide/coc.nvim', branch = 'release'}
     
@@ -86,25 +83,19 @@ require('packer').startup(function(use)
             require("plugins_config.todo-comments")
         end
     }
-    -- Para los colores como '#e67e22' o red, etc
+    -- NOTE: Para los colores como '#e67e22' o red, etc
     use 'norcalli/nvim-colorizer.lua'
     use 'ap/vim-css-color'
     
-    -- Comentar código
+    -- NOTE: Para comentar código. (lo explico en el cedema)
     use {
       'numToStr/Comment.nvim',
       config = function()
-        require('plugins_config.comment-nvim')
+        require('plugins_config.comment-nvim') -- Su Configuración
       end
     }
-    -- Integración con el plugin 'Treesitter'
-    --use {
-      --'JoosepAlviste/nvim-ts-context-commentstring',
-      --requires = {'nvim-treesitter/nvim-treesitter'}
-    --}
 
-
-    -- NOTE: PLUGINS PARA REACT
+    -- NOTE: ESte es un plugin esencial que se usa para un analisis sintatico, ayuda a resaltar y manipular codigo JSX de React
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
