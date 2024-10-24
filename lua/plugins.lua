@@ -89,6 +89,26 @@ require('packer').startup(function(use)
     -- Para los colores como '#e67e22' o red, etc
     use 'norcalli/nvim-colorizer.lua'
     use 'ap/vim-css-color'
+    
+    -- Comentar código
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('plugins_config.comment-nvim')
+      end
+    }
+    -- Integración con el plugin 'Treesitter'
+    --use {
+      --'JoosepAlviste/nvim-ts-context-commentstring',
+      --requires = {'nvim-treesitter/nvim-treesitter'}
+    --}
+
+
+    -- NOTE: PLUGINS PARA REACT
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 end)
 
 -- PLugins Configurations

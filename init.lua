@@ -34,3 +34,4 @@ vim.opt.cursorline = true
 vim.opt.signcolumn = "yes" 
 
 --vim.o.termguicolors = true
+--
