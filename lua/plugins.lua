@@ -86,20 +86,82 @@ require('packer').startup(function(use)
     -- NOTE: Para los colores como '#e67e22' o red, etc
     use 'norcalli/nvim-colorizer.lua'
     use 'ap/vim-css-color'
-    
+
+
+
+
     -- NOTE: Para comentar código. (lo explico en el cedema)
+
+    -- use {
+    --   'JoosepAlviste/nvim-ts-context-commentstring',  -- Este es el plugin necesario
+    --   after = 'nvim-treesitter',  -- Asegúrate de que se cargue después de nvim-treesitter
+    -- }
+
+    -- use {
+    --     'numToStr/Comment.nvim',
+    --     config = function()
+    --         -- require('plugins_config.comment-nvim')
+    --
+    --         require('Comment').setup {
+    --             -- NOTE: Actualizamos la configuración de comment.nvim para que use 'nvim-treesitter' para comentarios inteligentes en 'JSX'.
+    --             --
+    --             pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+    --         }
+    --     end
+    -- }
+
+    -- NOTE: Resaltado de sintaxis y mucho mas (mas info en el cedema)
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate' -- Actualiza los parsers automáticamente después de la instalación
+    }
+
+    use {
+        'JoosepAlviste/nvim-ts-context-commentstring',  -- Asegúrate de instalar este primero
+        config = function()
+            -- Configuración recomendada para usar la nueva API
+            require('ts_context_commentstring').setup {}
+
+            -- configuración de nvim-treesitter
+            require('nvim-treesitter.configs').setup {
+                -- Asegúrate de instalar los parsers para los lenguajes que uses
+                ensure_installed = { "javascript", "typescript", "tsx", "python", "lua", "html", "css" },
+
+                -- Habilitar el resaltado de sintaxis
+                highlight = {
+                    enable = true,              -- Habilitar el resaltado de sintaxis basado en treesitter
+                    additional_vim_regex_highlighting = false,  -- Desactiva el resaltado estándar de Vim
+                },
+
+                -- Habilitar el plegado de código basado en la estructura del árbol sintáctico
+                fold = {
+                    enable = true,
+                    disable = { "python" },      -- Deshabilitar el plegado para ciertos lenguajes si lo deseas
+                },
+                context_commentstring = {
+                    enable = true
+                },
+                -- Indentación automática basada en treesitter
+                indent = {
+                    enable = true
+                }
+            }
+            -- Para mejorar el rendimiento, evita el uso del módulo de commentstring obsoleto
+            vim.g.skip_ts_context_commentstring_module = true
+        end
+    }
+
     use {
       'numToStr/Comment.nvim',
       config = function()
-        require('plugins_config.comment-nvim') -- Su Configuración
-      end
+        require('Comment').setup {
+
+          pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+        }
+      end,
+      after = 'nvim-ts-context-commentstring'  -- Asegúrate de que Comment.nvim se cargue después
     }
 
-    -- NOTE: ESte es un plugin esencial que se usa para un analisis sintatico, ayuda a resaltar y manipular codigo JSX de React
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
 end)
 
 -- PLugins Configurations
@@ -112,3 +174,6 @@ dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/minimap.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/nvim-tree.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/alpha-nvim.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/nvim-colorizer.lua"))
+
+
+

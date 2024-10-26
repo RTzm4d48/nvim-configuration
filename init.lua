@@ -35,3 +35,8 @@ vim.opt.signcolumn = "yes"
 
 --vim.o.termguicolors = true
 --
+--
+--
+-- set foldmethod=expr
+-- set foldexpr=nvim_treesitter#foldexpr()
+
