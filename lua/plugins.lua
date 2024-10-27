@@ -6,6 +6,7 @@ require('packer').startup(function(use)
 
     -- Tema Onedark
     use 'navarasu/onedark.nvim'
+    -- use 'sainnhe/everforest'
 
 
     -- Instalar lualine.nvim (La linea en donde vemos el nombre de archivo, el modo, entre otros)
@@ -162,9 +163,16 @@ require('packer').startup(function(use)
       after = 'nvim-ts-context-commentstring'  -- Asegúrate de que Comment.nvim se cargue después
     }
 
+    -- NOTE: Genera complementos de código personalizados
+    use {
+        'L3MON4D3/LuaSnip',
+        config = function()
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end
+    }
 end)
 
--- PLugins Configurations
+-- TODO: PLugins Configurations
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/theme.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/lualine.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/fzf.lua"))
@@ -174,6 +182,7 @@ dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/minimap.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/nvim-tree.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/alpha-nvim.lua"))
 dofile(vim.fn.expand("~/.config/nvim/lua/plugins_config/nvim-colorizer.lua"))
+require('plugins_config.luasnip')
 
-
-
+-- TODO: MIS SNIPPETS PERSONALIZADOS
+require('my-snippets.my-snippets-react')
