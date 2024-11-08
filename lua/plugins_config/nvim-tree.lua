@@ -18,5 +18,8 @@ require('nvim-tree').setup {
     enable = true, -- Habilitar soporte para git
     ignore = false, -- No ignorar archivos git
   },
+  view = {
+    width = 45, -- El ancho del explorador de archivo
+  },
   -- Agrega más opciones según necesites
 }

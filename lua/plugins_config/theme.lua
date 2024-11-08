@@ -5,7 +5,7 @@ vim.opt.termguicolors = true   -- Habilitar colores en terminal
 -- TODO: THEME ONEDARK
 --
 require('onedark').setup {
-    style = 'cool' -- Puedes elegir entre 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+    style = 'darker' -- Puedes elegir entre 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
 }
 require('onedark').load()
 
