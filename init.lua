@@ -40,3 +40,5 @@ vim.opt.signcolumn = "yes"
 -- set foldmethod=expr
 -- set foldexpr=nvim_treesitter#foldexpr()
 
+-- Con esto establecemos que todos los bloques de codigo esten completamente desplegados al abrir un archivo.
+-- vim.o.foldlevelstart = 99

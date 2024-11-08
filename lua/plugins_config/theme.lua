@@ -4,10 +4,10 @@ vim.opt.termguicolors = true   -- Habilitar colores en terminal
 
 -- TODO: THEME ONEDARK
 --
-require('onedark').setup {
-    style = 'darker' -- Puedes elegir entre 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
-}
-require('onedark').load()
+-- require('onedark').setup {
+--     style = 'darker' -- Puedes elegir entre 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+-- }
+-- require('onedark').load()
 
 -- TODO: THEME EVERFORREST
 --
@@ -18,3 +18,7 @@ require('onedark').load()
 --
 -- -- Activar el tema
 -- vim.cmd('colorscheme everforest')
+--
+-- TODO: THME GRUVBOX MINOR
+--
+vim.cmd('colorscheme gruvbox-minor')

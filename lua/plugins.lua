@@ -5,8 +5,11 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'  -- Packer puede gestionarse a sí mismo
 
     -- Tema Onedark
-    use 'navarasu/onedark.nvim'
+    -- use 'navarasu/onedark.nvim'
     -- use 'sainnhe/everforest'
+    
+    -- use 'kdheepak/dark_flat.nvim'
+    use 'ricardoraposo/gruvbox-minor.nvim'
 
 
     -- Instalar lualine.nvim (La linea en donde vemos el nombre de archivo, el modo, entre otros)

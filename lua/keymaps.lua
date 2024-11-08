@@ -91,3 +91,12 @@ vim.api.nvim_set_keymap("n", "<leader>w", ":WinShift<CR>", { noremap = true, sil
 
 -- Para maximizar una ventana y tambien para restaurar a su tamaño original
 vim.api.nvim_set_keymap("n", "<leader>m", ":MaximizerToggle<CR>", { noremap = true, silent = true })
+
+
+
+-- Plegado y desplegado de codigo del plugin 'nvim-treesitter' (Al final no usare estos keymasp por que el 'az' y 'zm' me parecen optimos)
+-- vim.api.nvim_set_keymap('n', '<leader>f', 'za', { noremap = true, silent = true }) -- Plegar o desplegar el bloque actual
+-- vim.api.nvim_set_keymap('n', '<leader>F', 'zM', { noremap = true, silent = true }) -- Plegar todo
+-- vim.api.nvim_set_keymap('n', '<leader>O', 'zR', { noremap = true, silent = true }) -- Desplegar todo
+-- vim.api.nvim_set_keymap('n', '<leader>o', 'zo', { noremap = true, silent = true }) -- Desplegar un nivel
+-- vim.api.nvim_set_keymap('n', '<leader>c', 'zc', { noremap = true, silent = true }) -- Plegar un nivel
