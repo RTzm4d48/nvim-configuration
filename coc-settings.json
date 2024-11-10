@@ -14,7 +14,7 @@
         "html": {
             "command": "vscode-html-language-server",
             "args": ["--stdio"],
-            "filetypes": ["html"],
+            "filetypes": ["html", "djhtml"],
             "initializationOptions": {
                 "provideFormatter": true
             }

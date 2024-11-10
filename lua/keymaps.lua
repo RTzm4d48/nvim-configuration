@@ -100,3 +100,12 @@ vim.api.nvim_set_keymap("n", "<leader>m", ":MaximizerToggle<CR>", { noremap = tr
 -- vim.api.nvim_set_keymap('n', '<leader>O', 'zR', { noremap = true, silent = true }) -- Desplegar todo
 -- vim.api.nvim_set_keymap('n', '<leader>o', 'zo', { noremap = true, silent = true }) -- Desplegar un nivel
 -- vim.api.nvim_set_keymap('n', '<leader>c', 'zc', { noremap = true, silent = true }) -- Plegar un nivel
+--
+
+-- NOTE: COPILOT DE GITHUB
+
+-- Desactiva la asignación de tecla predeterminada de Copilot
+vim.g.copilot_no_tab_map = true
+
+-- Asigna Ctrl + j para aceptar sugerencias de Copilot y es 'CTRL' + 'ENTER'
+vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
