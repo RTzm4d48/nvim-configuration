@@ -46,8 +46,8 @@ vim.api.nvim_set_keymap('n', '<Leader><', '10<C-w><', { noremap = true, silent =
 
 
 -- Desplazamiento más rápido
-vim.api.nvim_set_keymap('n', '<C-j>', '20<C-e>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '20<C-y>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '10<C-e>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '10<C-y>', { noremap = true, silent = true })
 
 
 -- Usa Tab y Shift+Tab para navegar y seleccionar autocompletados de 'coc.nvim'
