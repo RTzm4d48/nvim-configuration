@@ -41,8 +41,10 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true 
 
 
 -- Redimensionar ventanas
-vim.api.nvim_set_keymap('n', '<Leader>>', '10<C-w>>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader><', '10<C-w><', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>>', '10<C-w>>', { noremap = true, silent = true })   -- Aumentar el tamaño horizontalmente
+vim.api.nvim_set_keymap('n', '<Leader><', '10<C-w><', { noremap = true, silent = true })   -- Disminuir el tamaño horizontalmente
+vim.api.nvim_set_keymap('n', '<Leader>+', '5<C-w>+', { noremap = true, silent = true })   -- Aumentar el tamaño verticalmente
+vim.api.nvim_set_keymap('n', '<Leader>-', '5<C-w>-', { noremap = true, silent = true })   -- Disminuir el tamaño verticalmente
 
 
 -- Desplazamiento más rápido
@@ -98,9 +100,8 @@ vim.api.nvim_set_keymap("n", "<leader>m", ":MaximizerToggle<CR>", { noremap = tr
 -- vim.api.nvim_set_keymap('n', '<leader>f', 'za', { noremap = true, silent = true }) -- Plegar o desplegar el bloque actual
 -- vim.api.nvim_set_keymap('n', '<leader>F', 'zM', { noremap = true, silent = true }) -- Plegar todo
 -- vim.api.nvim_set_keymap('n', '<leader>O', 'zR', { noremap = true, silent = true }) -- Desplegar todo
--- vim.api.nvim_set_keymap('n', '<leader>o', 'zo', { noremap = true, silent = true }) -- Desplegar un nivel
--- vim.api.nvim_set_keymap('n', '<leader>c', 'zc', { noremap = true, silent = true }) -- Plegar un nivel
---
+-- vim.api.nvim_set_keymap('n', '<leader>o', 'zo', { noremap = true, silent = true }) -- Desplegar un nivel (NO FUNSUIONA)
+-- vim.api.nvim_set_keymap('n', '<leader>c', 'zc', { noremap = true, silent = true }) -- Plegar un nivel (NO FUNSUIONA)
 
 -- NOTE: COPILOT DE GITHUB
 
@@ -109,3 +110,8 @@ vim.g.copilot_no_tab_map = true
 
 -- Asigna Ctrl + j para aceptar sugerencias de Copilot y es 'CTRL' + 'ENTER'
 vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
+
+-- NOTE: PARA EL LEGADO DE LAS CARPETAS DEL EXPLORADOR DE ARCHIVOS
+vim.keymap.set('n', '<leader>tc', function()
+  require('nvim-tree.api').tree.collapse_all()
+end, { desc = "Plegar todas las carpetas en Nvim-Tree" })
