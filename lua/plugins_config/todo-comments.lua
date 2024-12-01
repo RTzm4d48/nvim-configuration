@@ -4,7 +4,7 @@ vim.cmd [[
     highlight TodoCommentError guifg=#ec7063 gui=bold
     highlight TodoCommentWarning guifg=#f7dc6f gui=bold
     highlight TodoCommentInfo guifg=#3498db gui=bold
-    highlight TodoCommentHint guifg=#48c9b0 gui=bold
+    highlight TodoCommentHint guifg=#43667e gui=bold
     highlight TodoCommentStub guifg=#c39bd3 gui=bold
     highlight TodoCommentTest guifg=#ADD8E6 gui=bold
     highlight TodoCommentPerf guifg=#f5b041 gui=bold
