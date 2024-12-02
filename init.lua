@@ -4,6 +4,7 @@ vim.g.mapleader = " "         -- Leader Key (leader = Space)
 -- General Options
 require('keymaps')  -- the direction it points is '/lua/keymaps.lua'
 require('plugins')  -- the direction it points is '/lua/plugins.lua'
+require('commands')  -- the direction it points is '/lua/commands.lua'
 
 vim.opt.number = true         -- Mostrar números de línea
 vim.opt.relativenumber = true -- Números relativos para moverme fácilmente
