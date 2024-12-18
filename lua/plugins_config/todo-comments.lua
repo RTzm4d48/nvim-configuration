@@ -32,7 +32,7 @@ require("todo-comments").setup {
         after = "fg", -- Resalta el texto después de la palabra clave
         pattern = [[.*<(KEYWORDS)\s*:]], -- Detecta las palabras clave
         keyword = "bg", -- Cambia el color de fondo de la palabra clave
-
+        comments_only = true, -- Asegúrate de que solo los comentarios sean resaltados
     },
     colors = {
         error = { "TodoCommentError" },
@@ -44,6 +44,7 @@ require("todo-comments").setup {
         stub = { "TodoCommentStub" },
     },
     search = {
+        pattern = [[.*\b(KEYWORDS):.*]], -- Coincide solo con la línea completa que contiene la palabra clave
         command = "rg", -- Usa ripgrep para buscar comentarios
         args = {
             "--color=never",
